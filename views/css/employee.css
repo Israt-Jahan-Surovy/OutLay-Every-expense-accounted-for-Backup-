@@ -1,0 +1,225 @@
+/* Base Layout Fix for Sidebar Alignment */
+body {
+    display: flex;
+    background-color: #0b0e14;
+    color: #ffffff;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 250px;
+    /* Offsets content past fixed sidebar */
+    padding: 40px;
+    box-sizing: border-box;
+    width: calc(100% - 250px);
+}
+
+/* Greeting Title */
+.greeting {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+/* Stat Cards Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: #121620;
+    padding: 20px 24px;
+    border-radius: 8px;
+    border: 1px solid #1c2230;
+}
+
+.stat-label {
+    color: #8a99ad;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+/* Table Header Controls */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #a0a8b9;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.btn-add-expense {
+    padding: 8px 20px;
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-add-expense:hover {
+    background-color: #ffffff;
+    color: #0b0e14;
+}
+
+/* Data Table Styling */
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #8c939d;
+    color: #000000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.expense-table th {
+    background-color: #121620;
+    color: #ffffff;
+    padding: 14px 20px;
+    text-align: left;
+    font-weight: normal;
+    border-bottom: 1px solid #283042;
+}
+
+.expense-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #6c737d;
+    font-size: 0.95rem;
+}
+
+.expense-table tr:last-child td {
+    border-bottom: none;
+}
+
+.status-approved,
+.status-pending,
+.status-rejected {
+    font-weight: bold;
+}
+
+/* ==========================================
+   REPORTS PAGE STYLES
+   ========================================== */
+
+/* Filter Form */
+.report-filter-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.date-input {
+    background-color: #121620;
+    border: 1px solid #283042;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.btn-generate {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.btn-generate:hover {
+    background-color: #ffffff;
+    color: #0b0e14;
+}
+
+/* Chart Container Constraints */
+.report-display-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: #121620;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #1c2230;
+}
+
+.chart-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+}
+
+.chart-wrapper canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.placeholder-circle {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background-color: #1c2230;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    color: #a0a8b9;
+    box-sizing: border-box;
+}
+
+/* Legend Styling */
+.legend-wrapper {
+    flex: 1;
+}
+
+.legend-wrapper h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #a0a8b9;
+}
+
+.category-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-legend li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #1c2230;
+    color: #ffffff;
+}
+
+.category-legend li:last-child {
+    border-bottom: none;
+}
+
+.cat-percent {
+    font-weight: bold;
+    color: #50e3c2;
+}
