@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+    background-color: #0b0e14;
+    color: #ffffff;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling - ID Selectors */
+#sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #121620;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 20px;
+    border-right: 1px solid #1c2230;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out !important;
+}
+
+#brand-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+#brand-title {
+    color: #e5c185;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+#menu-icon {
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 9999;
+}
+
+#nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: opacity 0.2s ease;
+}
+
+#nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+/* Sidebar Active Gold Highlight */
+#nav-links a:hover,
+#nav-links li.active a {
+    color: #e5c185 !important;
+    font-weight: bold;
+}
+
+#sidebar-bottom {
+    transition: opacity 0.2s ease;
+}
+
+#logout-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background-color: #e5c185;
+    color: #0b0e14;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 2px;
+    font-size: 1.05rem;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+#logout-btn:hover {
+    background-color: #d4ae6e;
+}
+
+/* Collapsed Sidebar State */
+#sidebar.collapsed {
+    transform: translateX(-200px) !important;
+}
+
+#sidebar.collapsed #brand-title,
+#sidebar.collapsed #nav-links,
+#sidebar.collapsed #sidebar-bottom {
+    display: none !important;
+}
+
+#sidebar.collapsed #brand-header {
+    justify-content: flex-end !important;
+}
+
+/* Main Content Wrapper */
+#main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 40px;
+    background-color: #0b0e14;
+    transition: margin-left 0.3s ease-in-out !important;
+}
+
+#main-content.expanded {
+    margin-left: 60px !important;
+}
